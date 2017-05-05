@@ -56,3 +56,5 @@ setwd("D:/my_usb/packages/")
 pkgFilenames <- read.csv("pkgFilenames.csv", stringsAsFactors = FALSE)[, 1]
 install.packages(pkgFilenames, repos = NULL, type = "win.binary")
 ```
+
+That's it! If you want to know more, the code for this post can be found on [GitHub](https://github.com/MangoTheCat/blog_installing_packages).
