@@ -1,5 +1,5 @@
 # Installing Packages without Internet
-Graham Parsons  
+Graham Parsons
 
 
 
@@ -26,6 +26,11 @@ getDependencies <- function(packs){
                                 which = c("Depends", "Imports"),
                                 recursive = TRUE))
   packageNames <- union(packs, dependencyNames)
+  # Remove base dependencies, these are installed with R and not published on CRAN
+  basePackages <- c("base","compiler","datasets","graphics","grDevices","grid",
+                    "methods","parallel","splines","stats","stats4","tcltk","tools","utils")
+  packageNames <- setdiff(packageNames, basePackages)
+
   packageNames
 }
 # Calculate dependencies
